@@ -1,11 +1,11 @@
 node {
     def app
 
-   /* stage('Clone repository') {
+   stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
         checkout scm
-    }*/
+    }
 
     stage('Build image') {
         /* This builds the actual image */
@@ -13,12 +13,12 @@ node {
         app = docker.build("venmaniselvan/nodeapp")
     }
 
-   /* stage('Test image') {
+   stage('Test image') {
         
         app.inside {
             echo "Tests passed"
         }
-    }*/
+    }
 
     stage('Push image') {
         /* 
